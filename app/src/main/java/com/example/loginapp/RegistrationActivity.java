@@ -39,6 +39,12 @@ public class RegistrationActivity extends AppCompatActivity {
                 String regPasswordRep = eRegPasswordRepeat.getText().toString();
                 String regEmail = eRegEmail.getText().toString();
 
+                //Juan Torres hardcodeado para hacer mas rapido
+                //String regUsername = "Juan Torres";
+                //String regPassword = "1234utn";
+                //String regPasswordRep = "1234utn";
+                //String regEmail = "juan@gmail.com";
+
                 if(validate(regUsername, regPassword, regPasswordRep, regEmail)){
                     credentials = new Credentials(regUsername, regPassword);
                     Intent intent = new Intent(RegistrationActivity.this, MainActivity.class);
@@ -55,11 +61,17 @@ public class RegistrationActivity extends AppCompatActivity {
             Toast.makeText(this, "Hay campos vacios", Toast.LENGTH_SHORT).show();
             return false;
         } else {
-            if(password.equals(passwordRep)){
-                return true;
+            if (password.length()<6) {
+            Toast.makeText(this, "La contraseña debe tener mas de 6 caracteres", Toast.LENGTH_SHORT).show();
+            return false;
             } else {
-                Toast.makeText(this, "Las contraseñas no coinciden", Toast.LENGTH_SHORT).show();
-                return false;
+
+                    if(password.equals(passwordRep)){
+                    return true;
+                } else {
+                    Toast.makeText(this, "Las contraseñas no coinciden", Toast.LENGTH_SHORT).show();
+                    return false;
+                }
             }
         }
     }

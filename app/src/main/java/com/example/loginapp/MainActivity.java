@@ -17,8 +17,7 @@ public class MainActivity extends AppCompatActivity {
     private Button eLogin;
     private TextView eRegister;
 
-
-//    Credentials credentials = new Credentials("Juan Torres", "1234utn");
+    //Credentials credentials = new Credentials("Juan Torres", "1234utn");
 
     boolean isValid = false;
 
@@ -39,8 +38,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-//        credentials.setUsername("Juan Torres");
-//        credentials.setPassword("1234utn");
+
 
         eLogin.setOnClickListener(new View.OnClickListener() {
             @Override
